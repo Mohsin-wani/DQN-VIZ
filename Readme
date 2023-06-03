@@ -1,0 +1,27 @@
+DQN-Viz is a package that provides DQN, double DQN and Dueling DQN implementations that can be used by anyone.
+There are currently two types of neural networks provided, the mlp and the CNN.
+
+In addition to the algorithms the package also provides facilites to record videos of learning,
+save the visualization of reward and loss.
+
+Morevoer, the replay buffer used during learning process can also be saved. which could be a basis of further
+analysis.
+
+The implementation is object oriented and can be easily integrated into ones own application
+
+There could be two types of use cases, one is where the user wants to learn the functioning of DQN algorithms
+he/she can import the package and instantiate the objects, by passing the gym or ATARI environment name to it, DQN-Viz try to learn the environment and record videos of learning as well as performance during learning along with the replay buffer in the DQN folder with timestamp.
+
+The other scenario is where one can use these algorithms in their own projects and can monitor the performance and whether the training is going on as per their intended plan.
+
+Hyperparameters can be set through hyperparameters class
+following methods of Hyperparameters class can be used
+the init method is used to set 
+    i. environment (gym/atari e.g. Cartpole)
+    ii. Recording (true default) whether the training process is to be recorded or not)
+    iii. Policy ('mlp'/'cnn') cnn for learning from image data e.g. in ATARI environments, mlp is default
+    iv. learning_rate = 0.0001 (default) , 
+    v. path (where the recording and visualization is stored, the system will create its own substructure)
+    vi.  buffer_size = (10000 default) the size of replay buffer
+
+Users can set the parameters for deciding when to start recording, plotting or saving the buffer, the frequency of each type of recording, the network type, size and depth along with activations.
