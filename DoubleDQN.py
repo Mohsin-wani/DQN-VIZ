@@ -324,7 +324,7 @@ class Agent:
             if self.hyp_params.record == True:
                 if episode >= self.hyp_params.start_eps_rec:
                     if episode % self.hyp_params.frequency_rec == 0 and episode != 0:                                   
-                        self.util.record_video(self.env,self.network, 2, episode, self.hyp_params.req_reward, path = "/results") # self.hyp_params.path) ## change results to self.hyp_params.path if executing on your own machine
+                        self.util.record_video(self.env,self.network, 2, episode, self.hyp_params.req_reward, path = self.hyp_params.path) ## change results to self.hyp_params.path if executing on your own machine
                     if episode % self.hyp_params.frequency_buffer == 0 and episode != 0:                                   
                         self.replay_buffer.save_buffer(episode,path=self.hyp_params.path)
                     if episode % self.hyp_params.frequency_plot == 0 and episode != 0:                                   
